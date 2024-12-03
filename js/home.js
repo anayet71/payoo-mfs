@@ -9,7 +9,7 @@ document.getElementById('btn-add-money')
     // step 2: get money to be added to the balance
      addMoneyInput = document.getElementById("input-add-money").value;
     addMoneyInput = parseInt(addMoneyInput)
-    console.log(  addMoneyInput)
+    // console.log(  addMoneyInput)
 
 
     // step 3: get the pin number
@@ -20,27 +20,11 @@ document.getElementById('btn-add-money')
         updateAmount = parseInt(updateAmount)
         // step 5: add current and current balance
         newAmount = addMoneyInput + updateAmount
-         
+         console.log(newAmount)
         document.getElementById('balance').innerText = newAmount
-        event.target.submit()
-        addMoneyInput.value = ' ';
-       
-
        
     }
     else{
         alert("Wrong pin")
     }
-
-
-
-
-
-    // pinNumber = document.getElementById("input-pin-number")
-    // if(pinNumber === "1234" ){
-        
-    // }
-    // else{
-    //     alert("Wrong pin")
-    // }
 })
