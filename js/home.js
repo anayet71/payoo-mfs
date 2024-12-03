@@ -7,29 +7,26 @@ document.getElementById('btn-add-money')
     event.preventDefault()
 
     // step 2: get money to be added to the balance
-    const addMoneyInput = document.getElementById("input-add-money").value;
-    stringToNumberAdd = parseInt(addMoneyInput)
-    console.log(  stringToNumberAdd)
+     addMoneyInput = document.getElementById("input-add-money").value;
+    addMoneyInput = parseInt(addMoneyInput)
+    console.log(  addMoneyInput)
 
 
-    // get the pin number
+    // step 3: get the pin number
     const pinNumberInput = document.getElementById("input-pin-number").value;
     if(pinNumberInput === "1234"){
-
-        addMoneyInput
-        // console.log(pinNumberInput)
-        updateAmount = document.getElementById('stat-value').innerText
-        stringToNumberDef = parseInt(updateAmount)
-        
-        newAmount = stringToNumberAdd + stringToNumberDef
+        // step 4: get the current balance 
+        updateAmount = document.getElementById('balance').innerText
+        updateAmount = parseInt(updateAmount)
+        // step 5: add current and current balance
+        newAmount = addMoneyInput + updateAmount
          
-        console.log(updateAmount = newAmount)
+        document.getElementById('balance').innerText = newAmount
+        event.target.submit()
+        addMoneyInput.value = ' ';
+       
 
-        // console.log(typeof initialAmount)
-        // newAmount = parseInt(addMoneyInput)  + parseInt(initialAmount.innerText)
-        // const initialAmount = document.getElementById('stat-value').innerText = newAmount
-        // totalAmount = initialAmount = newAmount
-        // addMoneyInput = totalAmount.value
+       
     }
     else{
         alert("Wrong pin")
